@@ -1,0 +1,168 @@
+field: 051bd850-c36d-45b8-8d98-a7f00e6c8101
+fieldLayouts:
+  3a683aaf-3a99-4f55-84ee-f3ee827f7849:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 64e1e664-c7bf-4c5a-bd1f-d68aaa5732aa
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f77be19a-7196-4b72-a7d8-c5dc9c8afb48
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 79219040-5944-42d5-9fa9-cb9f6f014c24
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 46fcd7d6-3b63-4cd5-a30a-125314166ccc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b5332f9b-25d6-43b6-adad-55e3877881f8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  46fcd7d6-3b63-4cd5-a30a-125314166ccc:
+    contentColumnType: string
+    fieldGroup: null
+    handle: libraryItem
+    instructions: ''
+    name: 'Library Item'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Select library item to link.'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:77d9d325-ab7a-436e-af66-b061daec1973'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  64e1e664-c7bf-4c5a-bd1f-d68aaa5732aa:
+    contentColumnType: text
+    fieldGroup: null
+    handle: category
+    instructions: 'category name'
+    name: Category
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  79219040-5944-42d5-9fa9-cb9f6f014c24:
+    contentColumnType: string
+    fieldGroup: null
+    handle: cover
+    instructions: 'Cover image, gif, or video.'
+    name: Cover
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:fa75faff-05c7-48a8-9f68-e71f7f6f6264'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:fa75faff-05c7-48a8-9f68-e71f7f6f6264'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  b5332f9b-25d6-43b6-adad-55e3877881f8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: caption
+    instructions: 'Caption for item. Can be multi-line.'
+    name: Caption
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '3'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f77be19a-7196-4b72-a7d8-c5dc9c8afb48:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: 'Title of library item or other headline description.'
+    name: Headline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: libraryItem
+name: 'Library Item'
+sortOrder: 1

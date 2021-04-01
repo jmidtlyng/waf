@@ -1,0 +1,38 @@
+contentColumnType: text
+fieldGroup: fc416cd1-5f2d-4596-963a-9e3fa137689e
+handle: listOfLinks
+instructions: 'A list of links. To where? You decide.'
+name: 'List of links'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - LInk
+            -
+              - handle
+              - link
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+  maxRows: ''
+  minRows: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

@@ -1,0 +1,69 @@
+{% extends "_base" %}
+{% block content %}
+  <div class="librarby is-flex is-justify-content-center pt-5">
+    <ul class="librarby-feed">
+      {% for item in entry.libraryList.all() %}
+        {% set episode_art = item.image.one() %}
+        {% if (episode_art is not defined) or (episode_art == null) %}
+          {% set episode_art = imageFallback.image.one() %}
+        {% endif %}
+
+        <li class="librarby-feed-item">
+          <div class="texture is-flex-grow-1">
+            <svg class="texture__svg">
+              {% include "_components/svg/fractal-filter.html" %}
+              <rect x="0" y="0" width="100%" height="100%" filter="url(#fractalFilter)">
+            </svg>
+            {% if episode_art.kind == "video" %}
+              <div class="librarby-feed-item-content is-flex-grow-1 py-3 is-justify-content-center">
+                <div class="is-flex is-flex-direction-column has-text-centered
+                  librarby-feed-item-content--vid ">
+                  <a href="/library/{{ item.slug }}">
+                    <p class="librarby-feed-item-content-detail-title barlow is-size-5 pb-2">
+                      {{ item.title }}
+                    </p>
+                  </a>
+                  <div class="is-flex is-justify-content-center mt-5">
+                    <video class="librarby-feed-item-content__vid" playsinline controls
+                      data-plyr-config='{ "controls": ["play-large"] }'>
+                      <source src="{{ episode_art.url }}" type="video/mp4">
+                    </video>
+                  </div>
+                  <a class="curation-item-content__a is-block pt-2"
+                    href="/library/{{ item.slug }}">Go to page ></a>
+                  <p class="librarby-feed-item-content-description pt-4">
+                    {{ item.description }}
+                  </p>
+                  <div>
+                    <audio preload="metadata">
+                      <source src="{{ item.episodeAudio }}" type="audio/mp4">
+                    </audio>
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="librarby-feed-item-content is-flex-grow-1 py-3">
+                <a href="/library/{{ item.slug }}">
+                  <img class="librarby-feed-item-content__img" src="{{ episode_art.url }}">
+                </a>
+                <div class="librarby-feed-item-content-detail is-flex-grow-1 px-4">
+                  <a href="/library/{{ item.slug }}">
+                    <p class="librarby-feed-item-content-detail-title barlow is-size-5 pb-2">
+                      {{ item.title }}
+                    </p>
+                  </a>
+                  <p class="librarby-feed-item-content-description">{{ item.description }}</p>
+                  <div>
+                    <audio preload="metadata">
+                      <source src="{{ item.episodeAudio }}" type="audio/mp4">
+                    </audio>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

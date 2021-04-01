@@ -1,0 +1,10 @@
+{% block content %}
+  <svg class="header-noise">
+    {% include "_components/svg/fractal-filter-animated.html" %}
+    <!--
+      <ellipse cx="10" cy="0" rx="110" ry="100" filter="url(#fractalFilterAnimated)">
+    -->
+    <ellipse cx="0" cy="0" rx="250" ry="100" filter="url(#fractalFilterAnimated)"
+      fill="url(#fractalGradientAnimated)">
+  </svg>
+{% endblock %}

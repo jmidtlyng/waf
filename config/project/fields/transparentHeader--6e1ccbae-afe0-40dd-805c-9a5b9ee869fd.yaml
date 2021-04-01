@@ -1,0 +1,13 @@
+contentColumnType: boolean
+fieldGroup: 7a2ab025-d6b5-4d32-af07-56bbaa748841
+handle: transparentHeader
+instructions: 'If this is on, the header background will be see through. Social links are not effected by this.'
+name: 'Transparent Header'
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

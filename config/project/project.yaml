@@ -1,0 +1,42 @@
+dateModified: 1617162432
+email:
+  fromEmail: jacobmidtlyng@gmail.com
+  fromName: waf
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      allowAttachments: ''
+      prependSender: 'On behalf of'
+      prependSubject: 'New message from waf'
+      successFlashMessage: 'Thank you for signing up for the White Ash Flies newsletter.'
+      toEmail: jacobmidtlyng@gmail.com
+  contact-form-honeypot:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      honeypotParam: ' contactName'
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  redactor-custom-styles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: waf
+  schemaVersion: 3.5.13
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

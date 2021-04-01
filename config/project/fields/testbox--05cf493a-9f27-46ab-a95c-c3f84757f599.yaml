@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: fc416cd1-5f2d-4596-963a-9e3fa137689e
+handle: testbox
+instructions: ''
+name: testbox
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - ''
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

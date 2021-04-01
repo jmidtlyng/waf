@@ -1,0 +1,63 @@
+{% extends "_base" %}
+{% set iter = 0 %}
+{% block content %}
+  <div class="is-flex is-flex-direction-column">
+    <div>
+      <p class="librarby-feed-item-detail-description">{{ entry.description }}</p>
+      <div class="librarby-feed-item-detail-player">
+        <audio preload="metadata">
+          <source src="{{ entry.episodeAudio }}" type="audio/mp4">
+        </audio>
+      </div>
+    </div>
+    {% for chonk in entry.basicPage %}
+      {% if iter > 0 %}
+        <div class="librarby-content-divider"></div>
+      {% else %} {% set iter = 1 %} {% endif %}
+      <h3 class="montserrat p-4">{{ chonk.headline }}</h3>
+      {% if chonk.type.handle == 'text' %}
+        <div class="p-4">
+          {{ chonk.text | nl2br }}
+        </div>
+      {% elseif chonk.type.handle == 'asset' %}
+        <div class="librarby-content--med p-4">
+          {% if (chonk.assets | length) > 0 %}
+            {% set assets = chonk.assets.all() %}
+            {% for asset in assets %}
+              {% if asset.kind == "image" %}
+                <image src="{{ asset.url }}">
+              {% elseif asset.kind == "video" %}
+                <video playsinline controls data-plyr-config='{ "controls": ["play-large"] }'>
+                  <source src="{{ asset.url }}" type="video/mp4">
+                </video>
+              {% endif %}
+            {% endfor  %}
+          {% endif %}
+        </div>
+      {% elseif chonk.type.handle == 'combo' %}
+        <div class="is-flex is-flex-direction-row p-4 is-flex-wrap-wrap">
+          <div class="librarby-content-combo-text">
+            {{ chonk.text  | nl2br }}
+          </div>
+          <div class="librarby-content--med is-flex is-flex-direction-column librarby-content-combo-assets">
+            {% if (chonk.assets | length) > 0 %}
+              {% set assets = chonk.assets.all() %}
+              {% for asset in assets %}
+                <div class="p-4">
+                  {% if asset.kind == "image" %}
+                    <image src="{{ asset.url }}">
+                  {% elseif asset.kind == "video" %}
+                    <video playsinline controls data-plyr-config='{ "controls": ["play-large"] }'>
+                      <source src="{{ asset.url }}" type="video/mp4">
+                    </video>
+                  {% endif %}
+                </div>
+              {% endfor  %}
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      <p class="librarby-content-caption p4">{{chonk.caption}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,140 @@
+field: 573d3b37-0d67-4649-8c48-50b68715ac2d
+fieldLayouts:
+  6065d16b-5de8-44dc-94d5-05fce6542420:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 68416416-306e-433c-83e7-de58df047e02
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 885b4887-0eb6-454a-b5f0-fae58a8e6df0
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a1f0d079-340b-4739-8fed-602429922b39
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 36142ffe-1843-4e43-af6b-e62445f87ae3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  36142ffe-1843-4e43-af6b-e62445f87ae3:
+    contentColumnType: text
+    fieldGroup: null
+    handle: caption
+    instructions: 'Caption allowing multi-line text'
+    name: Caption
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  68416416-306e-433c-83e7-de58df047e02:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: 'A headline for the front display'
+    name: Headline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  885b4887-0eb6-454a-b5f0-fae58a8e6df0:
+    contentColumnType: string
+    fieldGroup: null
+    handle: cover
+    instructions: 'Cover Image for the front display. Can be image, video, or gif.'
+    name: Cover
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:fa75faff-05c7-48a8-9f68-e71f7f6f6264'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:fa75faff-05c7-48a8-9f68-e71f7f6f6264'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  a1f0d079-340b-4739-8fed-602429922b39:
+    contentColumnType: string
+    fieldGroup: null
+    handle: libraryItem
+    instructions: 'Attach audio and link to a library item'
+    name: 'Library Item'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:77d9d325-ab7a-436e-af66-b061daec1973'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: frontDisplay
+name: 'Front Display'
+sortOrder: 1

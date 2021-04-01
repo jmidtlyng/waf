@@ -1,0 +1,18 @@
+fieldLayouts:
+  a229d1a8-af39-4918-bf56-c66490e57d16:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0baad331-8cf6-463f-b240-26f61d714121
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Animated Header'
+        sortOrder: 1
+handle: animatedHeader
+name: 'Animated Header'

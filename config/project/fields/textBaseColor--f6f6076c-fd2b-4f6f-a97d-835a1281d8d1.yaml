@@ -1,0 +1,11 @@
+contentColumnType: string(7)
+fieldGroup: 7a2ab025-d6b5-4d32-af07-56bbaa748841
+handle: textBaseColor
+instructions: 'Color for paragraphs and common lines'
+name: 'Text Base Color'
+searchable: false
+settings:
+  defaultColor: '#000000'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

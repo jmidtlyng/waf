@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: fc416cd1-5f2d-4596-963a-9e3fa137689e
+handle: frontDisplay
+instructions: 'This will be highlighted in the middle-front of the front page. If there is none, then the space will be replaced by the next content on the page.'
+name: 'Front Display'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_frontdisplay}}'
+  maxBlocks: '1'
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

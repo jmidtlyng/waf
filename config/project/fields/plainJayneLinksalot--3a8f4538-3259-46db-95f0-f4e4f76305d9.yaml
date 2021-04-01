@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: fc416cd1-5f2d-4596-963a-9e3fa137689e
+handle: plainJayneLinksalot
+instructions: 'Link to something. A website. Link to a website.'
+name: Link
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

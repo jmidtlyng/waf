@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: fc416cd1-5f2d-4596-963a-9e3fa137689e
+handle: curation
+instructions: 'Link a library item and add a category, title, cover (image/gif/video) and caption.'
+name: Curation
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_curation}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
