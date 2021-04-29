@@ -1,8 +1,18 @@
-dateModified: 1617162432
+dateModified: 1618442227
 email:
   fromEmail: jacobmidtlyng@gmail.com
   fromName: waf
-  transportType: craft\mail\transportadapters\Sendmail
+  replyToEmail: null
+  template: null
+  transportSettings:
+    encryptionMethod: ''
+    host: mailhog.service.nitro
+    password: ''
+    port: '1025'
+    timeout: '10'
+    useAuthentication: ''
+    username: ''
+  transportType: craft\mail\transportadapters\Smtp
 plugins:
   contact-form:
     edition: standard
@@ -10,8 +20,8 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       allowAttachments: ''
-      prependSender: 'On behalf of'
-      prependSubject: 'New message from waf'
+      prependSender: 'Enrolled email: '
+      prependSubject: 'Newsletter enrollment'
       successFlashMessage: 'Thank you for signing up for the White Ash Flies newsletter.'
       toEmail: jacobmidtlyng@gmail.com
   contact-form-honeypot:
@@ -19,7 +29,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      honeypotParam: ' contactName'
+      honeypotParam: contactName
   redactor:
     edition: standard
     enabled: true

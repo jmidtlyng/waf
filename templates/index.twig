@@ -29,12 +29,12 @@
         {% endif %}
       </div>
     {% endfor %}
-    <ul class="curation">
+    <div class="curation">
       {% for item in entry.curation.all() %}
         {% set libItem = item.libraryItem.one() %}
         {% set asset = item.cover.one() %}
-        <li class="curation-item p-5">
-          <div class="texture">
+        <div class="curation-item p-5">
+          <div class="texture curation-snap">
             <svg class="texture__svg">
               {% include "_components/svg/fractal-filter.html" %}
               <rect x="0" y="0" width="100%" height="100%" filter="url(#fractalFilter)">
@@ -73,8 +73,8 @@
               </div>
             </div>
           </div>
-        </li>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 {% endblock %}

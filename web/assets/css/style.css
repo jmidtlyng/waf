@@ -133,16 +133,26 @@ body {
   padding: 1rem;
 }
 .curation {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  /*
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  */
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 .curation-item {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 34%;
-  position: relative;
+  height: 100vh;
+  scroll-snap-align: start;
+  width: 100vw;
+  /*
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 34%;
+    position: relative;
+  */
 }
 .curation-item-content {
   position: relative;
@@ -152,7 +162,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-  max-width: 320px;
+  /* max-width: 320px; */
 }
 .curation-item-content__vid {
   align-items: center;
