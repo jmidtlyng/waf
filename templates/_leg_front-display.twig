@@ -1,0 +1,29 @@
+<div class="front">
+	{% for item in entry.frontDisplay.all() %}
+	{% set asset = item.cover.one() %}
+	{% set libItem = item.libraryItem.one() %}  
+	<div class="front-display">
+		{% if asset %}
+			{% if asset.kind == "image" %}
+				{% if libItem %}
+					<a class="front-display-content__a pt-2" href="{{libItem.uri}}">
+						<image class="front-display-content__img" src="{{ asset.url }}">
+					</a>
+				{% else %}
+					<image class="curation-item-content__img" src="{{ asset.url }}">
+				{% endif %}
+			{% elseif asset.kind == "video" %}
+				<video class="front-display-content__vid" autoplay playsinline controls data-plyr-config='{ "controls": ["play-large"] }'>
+					<source src="{{ asset.url }}" type="video/mp4">
+				</video>
+				{% if libItem %}
+					<a class="front-display-content__a is-block pt-2" href="{{libItem.uri}}">Go to page ></a>
+				{% endif %}
+			{% endif %}
+		{% endif %}
+		{% if item.caption != '' %}
+			<p class="pt-1">{{ item.caption }}</p>
+		{% endif %}
+	</div>
+</div>
+{% endfor %}

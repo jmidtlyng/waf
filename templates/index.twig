@@ -1,80 +1,82 @@
 {% extends "_base" %}
 
-{% block content %}
-  <div class="front">
-    {% for item in entry.frontDisplay.all() %}
+{% block content %}  
+  <div class="curation" id="curation">
+    {% for item in entry.curation.all() %}
+      {% set libItem = item.libraryItem.one() %}
       {% set asset = item.cover.one() %}
-      {% set libItem = item.libraryItem.one() %}  
-      <div class="front-display">
-        {% if asset %}
-          {% if asset.kind == "image" %}
-            {% if libItem %}
-              <a class="front-display-content__a pt-2" href="{{libItem.uri}}">
-                <image class="front-display-content__img" src="{{ asset.url }}">
-              </a>
-            {% else %}
-              <image class="curation-item-content__img" src="{{ asset.url }}">
-            {% endif %}
-          {% elseif asset.kind == "video" %}
-            <video class="front-display-content__vid" autoplay playsinline controls data-plyr-config='{ "controls": ["play-large"] }'>
-              <source src="{{ asset.url }}" type="video/mp4">
-            </video>
-            {% if libItem %}
-              <a class="front-display-content__a is-block pt-2" href="{{libItem.uri}}">Go to page ></a>
+      {% set className = 'curation-view--' ~ random() %}
+      <div class="curation-item" data-class="{{className}}">
+        <div class="curation-item-content">
+          {% if asset %}
+            {% if asset.kind == "image" %}
+              {% if libItem %}
+                <a class="curation-item-content__a pt-2" href="{{libItem.uri}}">
+                  <image class="curation-item-content__img" src="{{ asset.url }}">
+                </a>
+              {% endif %}
+            {% elseif asset.kind == "video" %}
+              <video class="curation-item-content__vid" playsinline controls 
+                data-plyr-config='{ "controls": ["play-large"] }'>
+                <source src="{{ asset.url }}" type="video/mp4">
+              </video>
             {% endif %}
           {% endif %}
-        {% endif %}
-        {% if item.caption != '' %}
-          <p class="pt-1">{{ item.caption }}</p>
-        {% endif %}
-      </div>
-    {% endfor %}
-    <div class="curation">
-      {% for item in entry.curation.all() %}
-        {% set libItem = item.libraryItem.one() %}
-        {% set asset = item.cover.one() %}
-        <div class="curation-item p-5">
-          <div class="texture curation-snap">
-            <svg class="texture__svg">
-              {% include "_components/svg/fractal-filter.html" %}
-              <rect x="0" y="0" width="100%" height="100%" filter="url(#fractalFilter)">
-            </svg>
-            <div class="curation-item-content">
-              <p class="py-2 is-size-5">{{item.category}}</p>
-              {% if asset %}
-                {% if asset.kind == "image" %}
-                  {% if libItem %}
-                    <a class="curation-item-content__a pt-2" href="{{libItem.uri}}">
-                      <image class="curation-item-content__img" src="{{ asset.url }}">
-                    </a>
-                    <a class="curation-item-content__a is-block pt-2" href="{{libItem.uri}}">Go to page ></a>
-                  {% else %}
-                    <image class="curation-item-content__img" src="{{ asset.url }}">
-                  {% endif %}
-                {% elseif asset.kind == "video" %}
-                  <video class="curation-item-content__vid" playsinline controls data-plyr-config='{ "controls": ["play-large"] }'>
-                    <source src="{{ asset.url }}" type="video/mp4">
-                  </video>
-                  {% if libItem %}
-                    <a class="curation-item-content__a is-block pt-2" href="{{libItem.uri}}">Go to page ></a>
-                  {% endif %}
-                {% endif %}
-              {% endif %}
-              <div class="curation-item-content-detail">
-                <h4 class="pt-2 is-size-5">{{ item.headline }}</h4>
-                <p class="pt-1">{{ item.caption }}</p>
-                {% if libItem %}
-                  <div>
-                    <audio preload="metadata" playsinline>
-                      <source src="{{ libItem.episodeAudio }}" type="audio/mp4">
-                    </audio>
-                  </div>
-                {% endif %}
+          <div class="curation-item-content-detail">
+            <p class="py-2 is-size-5">{{item.category}}</p>
+            <h4 class="pt-2 is-size-5">{{ item.headline }}</h4>
+            {% if libItem %}
+              <a class="curation-item-content__a is-block pt-2" 
+                href="{{libItem.uri}}">Go to page ></a>
+            {% endif %}
+            <p class="pt-1">{{ item.caption }}</p>
+            {% if libItem %}
+              <div class="curation-item-content-plyr">
+                <audio preload="metadata" playsinline>
+                  <source src="{{ libItem.episodeAudio }}" type="audio/mp4">
+                </audio>
               </div>
-            </div>
+            {% endif %}
           </div>
         </div>
-      {% endfor %}
-    </div>
+      </div>
+      <style>
+        .{{className}} {
+          background-color: {{item.primaryColor}} !important;
+          color: {{item.textMainColor}} !important;
+        }
+        {% if item.textSecondaryColor %}
+          .{{className}} p,
+          .{{className}} a {
+            color: {{item.textSecondaryColor}} !important;
+          }
+        {% endif %}
+      </style>
+    {% endfor %}
   </div>
+  <script>
+    const el_curationItems = document.getElementsByClassName('curation-item'),
+          options = {
+            root: document.querySelector('#curation'),
+            rootMargin: '0px',
+            threshold: 0.25
+          };
+    
+    const observer = new IntersectionObserver(curationIntersect, options);
+    
+    for(el_curationItem of el_curationItems){
+      observer.observe(el_curationItem);
+    };
+    
+    function curationIntersect(entries, observer){
+      /* brainstorm:
+          each curation-item has a data-class which is swapped onto 
+          observer root (.curation) at intersect.
+          styles for class colors are set on each twig loop
+      */
+      let curatedItemClass = entries[0].target.getAttribute('data-class');
+      observer.root.className = "curation";
+      observer.root.classList.add(curatedItemClass);
+    };
+  </script>
 {% endblock %}

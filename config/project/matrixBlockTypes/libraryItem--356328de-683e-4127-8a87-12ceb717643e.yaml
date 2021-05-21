@@ -49,6 +49,33 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: ec453e18-8cdd-41e6-b599-44474544ab38
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: daf49672-e777-49ce-9be0-e111a99d2194
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eeccb6eb-4070-40f0-8234-3f0e4155422e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -144,6 +171,42 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  daf49672-e777-49ce-9be0-e111a99d2194:
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: textMainColor
+    instructions: 'Main color for text. This will default to all colors if set. If secondary color is set this will only color the label and title.'
+    name: 'Text Main Color'
+    searchable: false
+    settings:
+      defaultColor: '#000000'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  ec453e18-8cdd-41e6-b599-44474544ab38:
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: primaryColor
+    instructions: 'Main color for the background of this curated display'
+    name: 'Primary Color'
+    searchable: false
+    settings:
+      defaultColor: '#ffffff'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  eeccb6eb-4070-40f0-8234-3f0e4155422e:
+    contentColumnType: string(7)
+    fieldGroup: null
+    handle: textSecondaryColor
+    instructions: 'If set this will color the description and player colors. If not set these colors will default to the Text Main Color'
+    name: 'Text Secondary Color'
+    searchable: false
+    settings:
+      defaultColor: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
   f77be19a-7196-4b72-a7d8-c5dc9c8afb48:
     contentColumnType: text
     fieldGroup: null

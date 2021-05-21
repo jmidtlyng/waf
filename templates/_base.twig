@@ -24,31 +24,14 @@
     <link rel="stylesheet" href="/assets/css/librarby/player.min.css" />
   </head>
   <body>
-    {% include "_components/header/noise.twig" %}
-    <section class="header is-flex is-justify-content-space-between">
-      {% include "_components/header/social.twig" %}
-    </section>
-    <div class="is-block py-5"></div>
-    <section>
-      <div class="is-flex is-justify-content-center pt-5">
-        {% include "_components/header/site-title.twig" %}
-      </div>
-      <div class="is-flex is-justify-content-center pt-4">
-        {% include "_components/header/nav.twig" %}
-      </div>
-      <div class="is-flex is-justify-content-center pt-5 has-text-centered">
-        {% include "_components/_modules/newsletter-form.twig" %}
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        {% block content %} {% endblock %}
-      </div>
-    </section>
-    <section class="section footer">
-      <div class="container">
-      </div>
-    </section>
+    {% include "_components/header/index.twig" %}
+    <section>{% block content %} {% endblock %}</section>
+    <!--
+      <section class="section footer">
+        <div class="container">
+        </div>
+      </section>
+    -->
   </body>
   <script src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>
   <script src="https://unpkg.com/htmx.org@1.3.1"

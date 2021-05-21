@@ -139,13 +139,15 @@ body {
     justify-content: center;
   */
   height: 100vh;
+  margin: 0;
   overflow-y: scroll;
+  padding: 0;
   scroll-snap-type: y mandatory;
 }
 .curation-item {
-  height: 100vh;
+  height: 100%;
   scroll-snap-align: start;
-  width: 100vw;
+  width: 100%;
   /*
     align-items: center;
     display: flex;
