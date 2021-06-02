@@ -1,18 +1,20 @@
 {% block content %}
-  <form id="wafSignupForm" method="post" accept-charset="UTF-8">
-    {{ csrfInput() }}
-    <input type="hidden" name="action" value="contact-form/send">
-    {{ redirectInput('/tidbits/newsletter-response') }}
-    <input id="contactName" name="contactName" type="text">
-
-    <label class="is-block pb-2" for="from-email">Sign up for the newsletter:</label>
-    <input id="from-email" placeholder="Email Address" type="email" name="fromEmail" value="">
-
-    <input type="hidden" id="message" name="message" value="New registration">
-    <button
-      hx-post=""
-      hx-trigger="click"
-      hx-target="#wafSignupForm"
-      hx-swap="innerHTML">Sign up</button>
-  </form>
+    <label class="is-block pb-2" for="from-email">Newsletter Sign Up</label>
+  <!--
+    <form id="wafSignupForm" method="post" accept-charset="UTF-8">
+      {{ csrfInput() }}
+      <input type="hidden" name="action" value="contact-form/send">
+      {{ redirectInput('/tidbits/newsletter-response') }}
+      <input id="contactName" name="contactName" type="text">
+  
+      <input id="from-email" placeholder="Email Address" type="email" name="fromEmail" value="">
+  
+      <input type="hidden" id="message" name="message" value="New registration">
+      <button
+        hx-post=""
+        hx-trigger="click"
+        hx-target="#wafSignupForm"
+        hx-swap="innerHTML">Sign up</button>
+    </form>
+  -->
 {% endblock %}

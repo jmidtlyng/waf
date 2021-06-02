@@ -59,21 +59,16 @@
           options = {
             root: document.querySelector('#curation'),
             rootMargin: '0px',
-            threshold: 0.25
+            threshold: 1
           };
     
-    const observer = new IntersectionObserver(curationIntersect, options);
+    const observer = new IntersectionObserver(curationUpdateStyle, options);
     
     for(el_curationItem of el_curationItems){
       observer.observe(el_curationItem);
     };
     
-    function curationIntersect(entries, observer){
-      /* brainstorm:
-          each curation-item has a data-class which is swapped onto 
-          observer root (.curation) at intersect.
-          styles for class colors are set on each twig loop
-      */
+    function curationUpdateStyle(entries, observer){
       let curatedItemClass = entries[0].target.getAttribute('data-class');
       observer.root.className = "curation";
       observer.root.classList.add(curatedItemClass);
